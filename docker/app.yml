@@ -1,0 +1,37 @@
+# This configuration is intended for development purpose, it's **your** responsibility to harden it for production
+name: dotnetfinal
+services:
+  app:
+    build:
+      context: ../
+      dockerfile: Dockerfile-Back
+    ports:
+      - 5000:8080
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Server=mssql;Database=AppDotnet;User=sa;Password=DoRe34/26C7;TrustServerCertificate=True
+    depends_on:
+      keycloak:
+        condition: service_healthy
+      mssql:
+        condition: service_healthy
+    networks:
+      - dotnetfinal-network
+  keycloak:
+    extends:
+      file: ./keycloak.yml
+      service: keycloak
+    networks:
+      - dotnetfinal-network 
+  mssql:
+    extends:
+      file: ./mssql.yml
+      service: mssql
+    networks:
+      - dotnetfinal-network
+volumes:
+  mssql-data:
+
+networks: 
+  dotnetfinal-network:
+    driver: bridge

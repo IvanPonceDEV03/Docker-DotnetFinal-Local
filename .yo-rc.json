@@ -1,0 +1,36 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "authenticationType": "oauth2",
+    "baseName": "dotnetfinal",
+    "blueprints": [
+      {
+        "name": "generator-jhipster-dotnetcore",
+        "version": "4.5.0"
+      }
+    ],
+    "clientFramework": "react",
+    "clientTestFrameworks": [],
+    "clientTheme": "cerulean",
+    "clientThemeVariant": "dark",
+    "cqrsEnabled": true,
+    "creationTimestamp": 1772644064959,
+    "databaseChoice": "mssql",
+    "databaseType": "sqllite",
+    "dtoSuffix": "Dto",
+    "enableTranslation": false,
+    "entities": [],
+    "jhipsterVersion": "8.10.0",
+    "jwtSecretKey": "ZjJmOTRiNzNlNzJiMzliYThhYzAzM2QwNjVhNzJjNGZiODc0MzQ2MjZjMWJjYzc0MDE4OGFmYjc0YTNiYzcyNWY5ZDBkZDk2NWQ1ZWViYmZiMDdjODlhZGU0NWJjYTU1MDI3OQ==",
+    "microfrontend": null,
+    "microfrontends": [],
+    "namespace": "Dotnetfinal",
+    "nativeLanguage": "es",
+    "prodDatabaseType": "sql",
+    "serverPort": "5000",
+    "skipCommitHook": true,
+    "testFrameworks": [],
+    "withAdminUi": false,
+    "withTerraformAzureScripts": null
+  }
+}

@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <RootNamespace>Dotnetfinal.Infrastructure</RootNamespace>
+        <OutputType>Library</OutputType>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoMapper" />
+        <PackageReference Include="Serilog" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Dotnetfinal.Domain\Dotnetfinal.Domain.csproj" />
+        <ProjectReference Include="..\Dotnetfinal.Dto\Dotnetfinal.Dto.csproj" />
+        <ProjectReference Include="..\Dotnetfinal.Crosscutting\Dotnetfinal.Crosscutting.csproj" />
+    </ItemGroup>
+
+</Project>

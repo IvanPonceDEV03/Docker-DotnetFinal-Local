@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  devcontainer:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ..:/workspace:cached
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: sleep infinity
+    depends_on:
+      - keycloak
+      - mssql
+      - app
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=mssql;Database=AppDotnet;User=sa;Password=DoRe34/26C7;TrustServerCertificate=True
+    networks:
+      - dotnetfinal-network
+
+networks:
+  dotnetfinal-network:
+    driver: bridge
+
+
+  

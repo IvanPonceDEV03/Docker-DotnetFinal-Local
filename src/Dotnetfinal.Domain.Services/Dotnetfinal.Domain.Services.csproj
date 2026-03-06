@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <RootNamespace>Dotnetfinal.Domain.Services</RootNamespace>
+        <OutputType>Library</OutputType>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="JHipsterNet.Core" />
+        <PackageReference Include="AutoMapper" />
+        <PackageReference Include="LanguageExt.Core" />
+        <PackageReference Include="MailKit" />
+        <PackageReference Include="MimeKit" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Dotnetfinal.Infrastructure\Dotnetfinal.Infrastructure.csproj" />
+        <ProjectReference Include="..\Dotnetfinal.Domain\Dotnetfinal.Domain.csproj" />
+        <ProjectReference Include="..\Dotnetfinal.Crosscutting\Dotnetfinal.Crosscutting.csproj" />
+    </ItemGroup>
+
+</Project>

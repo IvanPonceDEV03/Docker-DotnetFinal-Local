@@ -1,0 +1,17 @@
+{
+  "name": "dotnetfinal",
+  "dockerComposeFile": [
+  "../docker/app.yml",
+  "docker-compose.yml"],
+  "service": "devcontainer",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [5000, 9080, 9443, 1433],
+  "portsAttributes": {
+    "5000": { "label": "Backend .NET" },
+    "9080": { "label": "Keycloak HTTP" },
+    "9443": { "label": "Keycloak HTTPS" },
+    "1433": { "label": "SQL Server" }
+  },
+  "postCreateCommand": "dotnet restore src/Dotnetfinal/Dotnetfinal.csproj && npm install --prefix src/Dotnetfinal/ClientApp",
+  "shutdownAction": "stopCompose"
+}

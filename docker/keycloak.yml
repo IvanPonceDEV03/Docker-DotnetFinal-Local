@@ -22,9 +22,8 @@ services:
       - 9080:9080
       - 9443:9443
     healthcheck:
-      test: 'bash /opt/keycloak/health-check.sh'
-      interval: 5s
-      timeout: 5s
-      # Increased retries due to slow Keycloak startup in GitHub Actions using MacOS
-      retries: 50
-      start_period: 10s
+      test: ["CMD-SHELL", "exec 3<>/dev/tcp/localhost/9990 && echo -e 'GET /health/ready HTTP/1.1\\r\\nHost: localhost\\r\\nConnection: close\\r\\n\\r\\n' >&3 && cat <&3 | grep -q 'UP'"]
+      interval: 20s
+      timeout: 15s
+      retries: 15
+      start_period: 60s

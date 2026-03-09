@@ -11,6 +11,6 @@
     "9443": { "label": "Keycloak HTTPS" },
     "1433": { "label": "SQL Server" }
   },
-  "postCreateCommand": "docker compose -f docker/app.yml up -d && dotnet restore src/Dotnetfinal/Dotnetfinal.csproj && npm install --prefix src/Dotnetfinal/ClientApp",
+  "postCreateCommand": "docker compose -f /workspaces/Docker-DotnetFinal-Local/docker/app.yml up -d --scale devcontainer=0 && dotnet restore src/Dotnetfinal/Dotnetfinal.csproj && npm install --prefix src/Dotnetfinal/ClientApp",
   "shutdownAction": "stopContainer"
 }

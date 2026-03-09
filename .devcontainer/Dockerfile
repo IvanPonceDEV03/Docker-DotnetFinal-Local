@@ -12,5 +12,5 @@ RUN apt-get update -yq && \
 
 RUN dotnet tool install --global dotnet-ef
 
-WORKDIR /workspace
+WORKDIR /workspaces
 COPY . .

@@ -4,7 +4,7 @@
   "../docker/app.yml",
   "docker-compose.yml"],
   "service": "devcontainer",
-  "workspaceFolder": "/workspace",
+  "workspaceFolder": "/workspaces",
   "forwardPorts": [5000, 9080, 9443, 1433],
   "portsAttributes": {
     "5000": { "label": "Backend .NET" },

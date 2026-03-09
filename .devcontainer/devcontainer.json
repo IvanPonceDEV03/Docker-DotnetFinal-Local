@@ -1,15 +1,9 @@
 {
   "name": "dotnetfinal",
-  "image": "mcr.microsoft.com/dotnet/sdk:9.0-noble",
-  "workspaceFolder": "/workspaces",
-  "features": {
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "22"
-    },
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {
-      "version": "latest"
-    }
+  "build": {
+    "dockerfile": "Dockerfile"
   },
+  "workspaceFolder": "/workspaces",
   "forwardPorts": [5000, 9080, 9443, 1433],
   "portsAttributes": {
     "5000": { "label": "Backend .NET" },

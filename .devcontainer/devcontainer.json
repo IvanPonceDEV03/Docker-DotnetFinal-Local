@@ -1,9 +1,15 @@
 {
   "name": "dotnetfinal",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
+  "image": "mcr.microsoft.com/dotnet/sdk:9.0-noble",
   "workspaceFolder": "/workspaces",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest"
+    }
+  },
   "forwardPorts": [5000, 9080, 9443, 1433],
   "portsAttributes": {
     "5000": { "label": "Backend .NET" },
@@ -11,6 +17,6 @@
     "9443": { "label": "Keycloak HTTPS" },
     "1433": { "label": "SQL Server" }
   },
-  "postCreateCommand": "cd /workspaces && docker compose -f docker/app.yml up -d && dotnet restore src/Dotnetfinal/Dotnetfinal.csproj && npm install --prefix src/Dotnetfinal/ClientApp",
+  "postCreateCommand": "docker compose -f docker/app.yml up -d && dotnet restore src/Dotnetfinal/Dotnetfinal.csproj && npm install --prefix src/Dotnetfinal/ClientApp",
   "shutdownAction": "stopContainer"
 }

@@ -6,7 +6,7 @@ RUN apt-get update -yq && \
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc && \
     echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu noble stable" > /etc/apt/sources.list.d/docker.list && \
     apt-get update -yq && \
-    apt-get install -yq docker-ce-cli nodejs npm && \
+    apt-get install -yq docker-ce docker-ce-cli containerd.io nodejs npm && \
     rm -rf /var/lib/apt/lists/* && \
     npm install -g create-react-app
 
